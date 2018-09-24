@@ -1,0 +1,31 @@
+﻿T1A05 Loops and Decisions
+
+<input type=text id="myText01" value=15>
+<input type=button value="run for loop" onclick="{
+	document.getElementById('myDiv01').innerHTML = ''
+	for (let x=0; x < document.getElementById('myText01').value;   x++){
+
+	if (x % 2 == 0){
+		document.getElementById('myDiv01').innerHTML += 'Even number, '
+	}
+
+if (x == 3)
+		document.getElementById('myDiv01').innerHTML += 'x es tres, '
+
+if (x == 7)
+		document.getElementById('myDiv01').innerHTML += 'this is a seven, '
+
+if (x == 11)
+		document.getElementById('myDiv01').innerHTML += 'this isnt a three, '
+
+if (x == 13)
+		document.getElementById('myDiv01').innerHTML += ' what is, '
+
+
+
+	document.getElementById('myDiv01').innerHTML += `x is ` + x + `<br>`
+	
+}
+
+}">
+<div id="myDiv01">...</div>
