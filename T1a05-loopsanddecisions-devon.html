@@ -1,6 +1,7 @@
-﻿T1A05 Loops and Decisions
+﻿T1A05 Loops and Decisions<br>
 
-<input type=text id="myText01" value=501>
+
+<input type=text id="myText01" value=20>
 <input type=button value="run for loop" onclick="{
 	document.getElementById('myDiv01').innerHTML = ''
 	for (let x=0; x < document.getElementById('myText01').value;   x++){
@@ -28,10 +29,23 @@ if (x == 17)
 		document.getElementById('myDiv01').innerHTML += '<font color=green> this is a green seventeen! </font>'
 
 if (x > 20)
-		document.getElementById('myDiv01').innerHTML += 'this is above <font color=red>20</font>, '
+		document.getElementById('myDiv01').innerHTML += 'this is <font color=red>20</font>, '
 
-if (x >= 500)
-		document.getElementById('myDiv01').innerHTML += 'pretty high down here, '
+
+if (x == 4)
+		document.getElementById('myDiv01').innerHTML += '<font color=purple>fourfourfourfourfour</font>'
+
+if (x < 3) 
+		document.getElementById('myDiv01').innerHTML += '<font color=white>are you able to see this, this is white</font>'
+
+if (x == 14 && x == 16)
+		document.getElementById('myDiv01').innerHTML += 'this is both <font color=red> fourteen</font>and<font color=green>sixteen</font>'
+
+
+
+
+
+
 
 	document.getElementById('myDiv01').innerHTML += `x is ` + x + `<br>`
 	
