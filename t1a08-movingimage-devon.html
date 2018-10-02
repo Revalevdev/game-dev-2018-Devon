@@ -1,5 +1,44 @@
 ﻿<h3 align=center > moving image by devon </h3>
 
+<script>
+document.onkeydown = checkKey;
+
+function checkKey(myEvent) {
+	document.getElementById('myDiv01').innerHTML = 'keyCode: '+myEvent.keyCode
+	
+if (myEvent.keyCode == 38){ document.getElementById('myImage01').style.top =
+ parseInt(document.getElementById('myImage01').style.top) - 5 + 'px'} // up arrow = 38
+if (myEvent.keyCode == 40){ document.getElementById('myImage01').style.top =
+ parseInt(document.getElementById('myImage01').style.top) + 5 + 'px'} // down arrow = 40
+if (myEvent.keyCode == 37){ document.getElementById('myImage01').style.left =
+ parseInt(document.getElementById('myImage01').style.left) - 5 + 'px'} // left arrow = 37
+if (myEvent.keyCode == 39){ document.getElementById('myImage01').style.left =
+ parseInt(document.getElementById('myImage01').style.left) + 5 + 'px'} // right arrow = 39
+
+
+if (myEvent.keyCode == 87){ document.getElementById('myImage02').style.top = 
+ parseInt(document.getElementById('myImage02').style.top) - 5 + 'px' 
+document.getElementById('myImage02').style.transform= 'rotate(90deg)'} // w = 87
+if (myEvent.keyCode == 83){ document.getElementById('myImage02').style.top = 
+ parseInt(document.getElementById('myImage02').style.top) + 5 + 'px' 
+document.getElementById('myImage02').style.transform= 'rotate(270deg)'} // s = 83
+if (myEvent.keyCode == 65){ document.getElementById('myImage02').style.left = 
+ parseInt(document.getElementById('myImage02').style.left) - 5 + 'px'
+document.getElementById('myImage02').style.transform= 'rotate(0deg)'} // a = 65
+if (myEvent.keyCode == 68){ document.getElementById('myImage02').style.left = 
+ parseInt(document.getElementById('myImage02').style.left) + 5 + 'px'
+document.getElementById('myImage02').style.transform= 'rotate(180deg)'} // d = 68
+
+
+
+
+}
+</script>
+
+
+
+<div id="myDiv01">...</div>
+
 <img id="myImage01" width=40
 src="https://33.media.tumblr.com/17ffd65788d459e6591e5aade7a5b24d/tumblr_nwr7rtfzyt1ske259o1_500.gif"
 style="position:absolute; left:600px; top:400px">
@@ -14,4 +53,26 @@ style="position:absolute; left:200px; top:100px">
 document.getElementById('myImage01').style.top = 
 	parseInt(document.getElementById('myImage01').style.top) - 5 + 'px'
 }">
+
+<input type=button value="Left" onclick="{
+	//alert()
+document.getElementById('myImage01').style.left = 
+	parseInt(document.getElementById('myImage01').style.left) - 5 + 'px'
+}">
+
+<input type=button value="Right" onclick="{
+	//alert()
+document.getElementById('myImage01').style.left = 
+	parseInt(document.getElementById('myImage01').style.left) + 5 + 'px'
+}">
+
+<input type=button value="Down" onclick="{
+	//alert()
+document.getElementById('myImage01').style.top = 
+	parseInt(document.getElementById('myImage01').style.top) + 5 + 'px'
+}">
+
+
+
+
 
