@@ -1,78 +1,66 @@
-﻿<h3 align=center > moving image by devon </h3>
+﻿<h3 align=center > My Moving images by Devon</h3>
 
 <script>
+
+
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+myStart = new Date().getTime()
+
 document.onkeydown = checkKey;
 
 function checkKey(myEvent) {
-	document.getElementById('myDiv01').innerHTML = 'keyCode: '+myEvent.keyCode
-	
-if (myEvent.keyCode == 38){ document.getElementById('myImage01').style.top =
- parseInt(document.getElementById('myImage01').style.top) - 5 + 'px'} // up arrow = 38
-if (myEvent.keyCode == 40){ document.getElementById('myImage01').style.top =
- parseInt(document.getElementById('myImage01').style.top) + 5 + 'px'} // down arrow = 40
-if (myEvent.keyCode == 37){ document.getElementById('myImage01').style.left =
- parseInt(document.getElementById('myImage01').style.left) - 5 + 'px'} // left arrow = 37
-if (myEvent.keyCode == 39){ document.getElementById('myImage01').style.left =
- parseInt(document.getElementById('myImage01').style.left) + 5 + 'px'} // right arrow = 39
+   let myEnd = new Date().getTime()
+   let myDuration = Math.round((myEnd-myStart)/1000)
+   document.getElementById('myDiv01').innerHTML = 'seconds: ' + myDuration +
+', keyCode: '+myEvent.keyCode
 
-
-if (myEvent.keyCode == 87){ document.getElementById('myImage02').style.top = 
- parseInt(document.getElementById('myImage02').style.top) - 5 + 'px' 
-document.getElementById('myImage02').style.transform= 'rotate(90deg)'} // w = 87
-if (myEvent.keyCode == 83){ document.getElementById('myImage02').style.top = 
- parseInt(document.getElementById('myImage02').style.top) + 5 + 'px' 
-document.getElementById('myImage02').style.transform= 'rotate(270deg)'} // s = 83
-if (myEvent.keyCode == 65){ document.getElementById('myImage02').style.left = 
- parseInt(document.getElementById('myImage02').style.left) - 5 + 'px'
-document.getElementById('myImage02').style.transform= 'rotate(0deg)'} // a = 65
-if (myEvent.keyCode == 68){ document.getElementById('myImage02').style.left = 
- parseInt(document.getElementById('myImage02').style.left) + 5 + 'px'
-document.getElementById('myImage02').style.transform= 'rotate(180deg)'} // d = 68
-
-
-
-
+   if (myHitOther('myImage01','myImage02')){
+       alert("Player One Wins! Player Two Sucks!");
 }
+if (myEvent.keyCode == 87){ document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top)-5 + 'px'}
+if (myEvent.keyCode == 65){ document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left)-5 + 'px'}
+if (myEvent.keyCode == 83){ document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top)+5 + 'px'}
+if (myEvent.keyCode == 68){ document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left)+5 + 'px'}
+if (myEvent.keyCode == 38){ document.getElementById('myImage02').style.top = parseInt(document.getElementById('myImage02').style.top)-5 + 'px'}
+if (myEvent.keyCode == 37){ document.getElementById('myImage02').style.left = parseInt(document.getElementById('myImage02').style.left)-5 + 'px'}
+if (myEvent.keyCode == 40){ document.getElementById('myImage02').style.top = parseInt(document.getElementById('myImage02').style.top)+5 + 'px'}
+if (myEvent.keyCode == 39){ document.getElementById('myImage02').style.left = parseInt(document.getElementById('myImage02').style.left)+5 + 'px'}
+}
+
 </script>
-
-
 
 <div id="myDiv01">...</div>
 
-<img id="myImage01" width=40
-src="https://33.media.tumblr.com/17ffd65788d459e6591e5aade7a5b24d/tumblr_nwr7rtfzyt1ske259o1_500.gif"
-style="position:absolute; left:600px; top:400px">
+<img id="myImage01" width=40 src="https://33.media.tumblr.com/17ffd65788d459e6591e5aade7a5b24d/tumblr_nwr7rtfzyt1ske259o1_500.gif"
+style="position:absolute; width:40px; height:40px; left:600px; top:400px">
 
-
-<img id="myImage02" width=40
-src="http://dl.glitter-graphics.com/pub/3503/3503972igjuk96efr.gif"
-style="position:absolute; left:200px; top:100px">
+<img id="myImage02" width=40 src="http://dl.glitter-graphics.com/pub/3503/3503972igjuk96efr.gif"
+style="position:absolute; width:40px; height:40px; left:200px; top:100px" 
+    style="position:absolute; width:40px; height:40px;  left:200px; top:50px">
 
 <input type=button value="Up" onclick="{
-	//alert()
-document.getElementById('myImage01').style.top = 
-	parseInt(document.getElementById('myImage01').style.top) - 5 + 'px'
+   console.log('up start')
+   document.getElementById('myImage01').style.top = 
+     parseInt(document.getElementById('myImage01').style.top) - 5 + 'px'
+   if (myHitOther('myImage01','myImage02')){
+       alert()
+   }
+   console.log('up end')
 }">
-
-<input type=button value="Left" onclick="{
-	//alert()
-document.getElementById('myImage01').style.left = 
-	parseInt(document.getElementById('myImage01').style.left) - 5 + 'px'
-}">
-
-<input type=button value="Right" onclick="{
-	//alert()
-document.getElementById('myImage01').style.left = 
-	parseInt(document.getElementById('myImage01').style.left) + 5 + 'px'
-}">
-
-<input type=button value="Down" onclick="{
-	//alert()
-document.getElementById('myImage01').style.top = 
-	parseInt(document.getElementById('myImage01').style.top) + 5 + 'px'
-}">
-
-
-
-
-
