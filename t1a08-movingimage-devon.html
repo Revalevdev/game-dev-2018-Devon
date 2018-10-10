@@ -30,9 +30,11 @@ function checkKey(myEvent) {
    let myDuration = Math.round((myEnd-myStart)/1000)
    document.getElementById('myDiv01').innerHTML = 'seconds: ' + myDuration +
 ', keyCode: '+myEvent.keyCode
-
+   if (myDuration >= 60){
+	alert("Player 2 wins!")
+}
    if (myHitOther('myImage01','myImage02')){
-       alert("Player One Wins! Player Two Sucks!");
+       alert("Player One Wins!");
 }
 if (myEvent.keyCode == 87){ document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top)-5 + 'px'}
 if (myEvent.keyCode == 65){ document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left)-5 + 'px'}
@@ -52,8 +54,8 @@ if (myEvent.keyCode == 39){ document.getElementById('myImage02').style.left = pa
 style="position:absolute; width:40px; height:40px; left:600px; top:400px">
 
 <img id="myImage02" width=40 src="http://dl.glitter-graphics.com/pub/3503/3503972igjuk96efr.gif"
-style="position:absolute; width:40px; height:40px; left:200px; top:100px" 
-    style="position:absolute; width:40px; height:40px;  left:200px; top:50px">
+style="position:absolute; width:40px; height:40px; left:200px; top:100px">
+   
 
 <input type=button value="Up" onclick="{
    console.log('up start')
