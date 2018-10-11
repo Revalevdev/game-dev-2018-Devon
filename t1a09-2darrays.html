@@ -1,0 +1,37 @@
+﻿<h3 align=center> t1a09 by devon </h3>
+
+
+
+<div id="myDiv01">...</div>
+
+<input type=button value="generate 2D array" onclick="{
+	
+document.getElementById('myDiv01').innerHTML = ''
+
+let myChart = []
+ myChart[0] = []
+ myChart[1] = []
+ myChart[2] = []
+ myChart[3] = []
+ myChart[4] = []
+
+myChart[0][0] = 1
+
+myChart[2][1] = 12
+
+myChart[0][2] = 3
+
+myChart[3][4] = 7
+
+myChart[1][4] = 23784
+
+document.getElementById('myDiv01').innerHTML += `
+	<table border=1>
+	<tr><td> ${myChart[0][0]} </td><td>	</td>	</tr> 
+	<tr><td> ${myChart[2][1]} </td><td>	</td>	</tr> 
+	<tr><td> ${myChart[0][2]} </td><td>	</td>	</tr> 
+	<tr><td> ${myChart[3][4]} </td><td>	</td>	</tr> 
+	<tr><td> ${myChart[1][4]} </td><td>	</td>	</tr> 
+	</table>`
+}">
+
