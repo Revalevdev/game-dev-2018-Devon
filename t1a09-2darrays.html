@@ -4,6 +4,10 @@
 
 <div id="myDiv01">...</div>
 
+<input type=text id="myText01">
+<input type=text id="myText02">
+<input type=text id="myText03"><br>
+
 <input type=button value="generate 2D array" onclick="{
 	
 document.getElementById('myDiv01').innerHTML = ''
@@ -15,23 +19,23 @@ let myChart = []
  myChart[3] = []
  myChart[4] = []
 
-myChart[0][0] = 1
-
-myChart[2][1] = 12
-
-myChart[0][2] = 3
-
-myChart[3][4] = 7
-
-myChart[1][4] = 23784
+	myChart[0][0] = document.getElementById('myText01').value
+	myChart[0][1] = document.getElementById('myText02').value
+	myChart[0][2] = document.getElementById('myText03').value
+	myChart[1][0] = document.getElementById('myText02').value
+	myChart[1][1] = document.getElementById('myText02').value * document.getElementById('myText02').value
+	myChart[1][2] = document.getElementById('myText02').value * document.getElementById('myText03').value
+	myChart[2][0] = document.getElementById('myText03').value
+	myChart[2][1] = document.getElementById('myText02').value * document.getElementById('myText03').value
+	myChart[2][2] = document.getElementById('myText03').value * document.getElementById('myText03').value
 
 document.getElementById('myDiv01').innerHTML += `
 	<table border=1>
-	<tr><td> ${myChart[0][0]} </td><td>	</td>	</tr> 
-	<tr><td> ${myChart[2][1]} </td><td>	</td>	</tr> 
-	<tr><td> ${myChart[0][2]} </td><td>	</td>	</tr> 
-	<tr><td> ${myChart[3][4]} </td><td>	</td>	</tr> 
-	<tr><td> ${myChart[1][4]} </td><td>	</td>	</tr> 
+	<tr><td> ${myChart[0][0]} </td> <td> ${myChart[1][0]} </td> <td> ${myChart[2][0]} </td> </tr>
+
+	<tr><td> ${myChart[0][1]} </td> <td> ${myChart[1][1]} </td> <td> ${myChart[2][1]} </td> </tr>
+
+	<tr><td> ${myChart[0][2]} </td> <td> ${myChart[1][2]} </td> <td> ${myChart[2][2]} </td> </tr>
 	</table>`
 }">
 
