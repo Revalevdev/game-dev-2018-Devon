@@ -1,27 +1,79 @@
 ﻿t1a06-functions-devon<br>
 
-<input type=text id="myText01" value="3"><br>
-
-
-<input type=button value="Run function myFun" onclick="{
-alert()
-
 <script>
-function myFun()
-	
-
-document.getElementById('myDiv01').innerHTML = ' x  = '
-	document.getElementById('myText01').innerHTML *
-	document.getElementById('myText01').innerHTML
-
-
-myFun()
-
+function myFun(){
+    document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value + ` + ` + document.getElementById('myText01').value + ` = ` +
+(parseFloat(document.getElementById('myText01').value) + 
+parseFloat(document.getElementById('myText01').value))
+}
 </script>
+
+
+
+<input type=text value=3 id="myText01" >
+
+<input type=button value="Run function Addition" onclick="{
+    myFun()
 }">
 
-
-
 <div id="myDiv01">...</div>
+<br>
+<br>
+<br>
+<script>
+function myFun03(){
+    document.getElementById('myDiv04').innerHTML = document.getElementById('myText02').value + ` - ` + document.getElementById('myText02').value + ` = ` +
+(parseFloat(document.getElementById('myText02').value) - 
+parseFloat(document.getElementById('myText02').value))
+}
+</script>
+
+
+
+<input type=text value=3 id="myText02" >
+
+<input type=button value="Run function Subtraction" onclick="{
+    myFun03()
+}">
+
+<div id="myDiv04">...</div>
+<br>
+<br>
+<br>
+<script>
+function myFun01(){
+    document.getElementById('myDiv02').innerHTML = document.getElementById('myText03').value + ` * ` + document.getElementById('myText03').value + ` = ` + 
+(parseFloat(document.getElementById('myText03').value) * 
+parseFloat(document.getElementById('myText03').value))
+}
+</script>
+
+
+<input type=text value=3 id="myText03" >
+
+<input type=button value="Run function Multiplication" onclick="{
+    myFun01()
+}">
+
+<div id="myDiv02">...</div>
+<br>
+<br>
+<br>
+<script>
+function myFun02(){
+   document.getElementById('myDiv03').innerHTML = document.getElementById('myText04').value + ` / ` + document.getElementById('myText04').value + ` = ` + 
+(parseFloat(document.getElementById('myText04').value) / 
+parseFloat(document.getElementById('myText04').value))
+}
+</script>
+
+
+<input type=text value=3 id="myText04" >
+
+<input type=button value="Run function Division" onclick="{
+    myFun02()
+}">
+
+<div id="myDiv03">...</div>
 
 
