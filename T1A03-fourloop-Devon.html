@@ -1,17 +1,21 @@
-﻿<input type=text id="myText01" value=1000>
-<input type=button value"run for loop" onClick="{
-	
-  document.getElementById('myDiv01').innerHTML = ''
+﻿<input type=text id="myText01" value=3>
 
-for (let x=0;    x < document.getElementById('myText01').value;    x++){
-	document.getElementById('myDiv01').innerHTML += `x is ` + x + `<br>`
+<input type=button value="run for loop" onclick="{
 
+  document.getElementById('myDiv01').innerHTML = ''   
+
+  for (let x=0;   x < document.getElementById('myText01').value;    x++){
+     document.getElementById('myDiv01').innerHTML += `x is ` + x + `<br>`
+  }
+
+var steps;   
+  for (steps = 0; steps < 15; steps++){
+console.log('walking 15 steps');
 }
 
 
 
-	//document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value
 
 }">
 
-<div id="myDiv01">...</div>
+<div id="myDiv01"></div>
