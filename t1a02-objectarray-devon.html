@@ -1,21 +1,20 @@
-﻿t1a02-objectarray-devon.html
-<h2 align=center> 
-try to separate a complex object array by devon</h2><br>
+﻿<h2 align=center>T1A02<br>
+Try to seperate a complex object array by Devon</h2>
 open debug window ctrl-shift-i<br><br>
 
-myCoolObject=<input id="myInput" type=text size=120
+myCoolObject = <input id="myInput" type=text size=120 
 
-value='{"x":5","y":"2", "myArray": [3,7,8]}'><br>
+value='{"x":"5", "y":"2", "myArray": [3,7,8]}'><br>
 
-<input type=button value="show Object" onclick="{
-	myCoolObject=JSON.parse(document.getElementById('myInput').value)
+<input type=button value="show Object" onclick="{ 
+   myCoolObject = JSON.parse(document.getElementById('myInput').value)
 
-	document.getElementById('myDiv01').innerHTML = `this is x: `+
-	myCoolObject.x +`, this is y: `+ myCoolObject.y +
-`<br>` +
-	`lets print an array`+myCoolObject.myArray +
-`<br>` +
-	`lets print the last number of the array `+
-	myCoolObject.myArray[2] + `<br>`
+   document.getElementById('myDiv01').innerHTML = `This is x: `+
+     myCoolObject.x +`, this is y: `+ myCoolObject.y + `<br>` +
+     `Lets print an array `+ myCoolObject.myArray + `<br>` +
+     `Lets print the last number of the array `+ 
+      myCoolObject.myArray[2] + `<br>` 
+
 }"><br>
+
 <div id="myDiv01">...</div><br><br>
