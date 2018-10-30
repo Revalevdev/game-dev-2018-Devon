@@ -1,0 +1,36 @@
+﻿
+<script>
+
+function myFun(myIn){
+  return myIn + '<br>'
+}
+
+</script>
+
+
+<h2 align=center>Passing to functions by devon</h2>
+
+<input id="myIn" type=text  value="">
+
+<input type=button value="myFun('Hello')" onclick="{
+   
+   document.getElementById('myOut').innerHTML += myFun('Hello')
+           
+}">
+
+<div id="myOut"></div><br><br><br><br><br><br><br>
+
+<script>
+
+function myFun2(myIn2){
+	return myIn + '<br>'
+}
+</script>
+
+<input id="myIn2" type=text value="">
+<input type=button value="myFun2('words')" onclick="{
+	document.getElementById('myOut2').innerHTML += myFun2('words')
+}">
+<div id="myOut2"></div>
+
+

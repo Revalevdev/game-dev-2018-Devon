@@ -1,0 +1,59 @@
+﻿<h1 align=center> T1A12 </h1><br>
+<h2 align=center> String manipulation functions by Devon </h2><br>
+<div id="firstOut">...</div>
+<input id="myIn" type=text value="word, cat ">
+
+<input type=button value=".toUpperCase()" onclick="{ 
+
+	document.getElementById('firstOut').innerHTML =
+		document.getElementById('myIn').value.toUpperCase()
+
+}">
+<div id="myOut2">...</div>
+
+<input id="myIn" type=text value="WORD, CAT ">
+
+<input type=button value=".toLowerCase()" onclick="{
+
+	document.getElementById('myOut2').innerHTML =
+		document.getElementById('myIn').value.toLowerCase()
+}">
+<div id="myOut5">...</div>
+
+<input id="myIn" type=text value="...">
+<input type=button value"...()" onclick="{
+
+	document.getElementById('myOut5').innerHTML =
+		document.getElementById('myIn').value.
+
+
+
+
+
+
+}">
+
+<div id="myOut4">Yellow, Blue, Green, Red, White</div>
+<button onclick="myFunction()">.slice()</button>
+
+<p id="myin"></p>
+
+<script>
+function myFunction() {
+    var colors = ["Yellow", "Blue", "Green", "Red", "White"];
+    var myFav = colors.slice(-3, -1);
+    document.getElementById("myin").innerHTML = myFav;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://www.w3schools.com/js/js_string_methods.asp"

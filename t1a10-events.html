@@ -1,0 +1,32 @@
+﻿<h3 align=center> T1A10-Events-Devon</h3>
+
+
+//
+<div id="myDiv01" style="background:red;width:90; height:60;"
+onDblClick="{
+document.getElementById('myOutput').innerHTML = ' you clicked twice '
+}">double click this div</div>
+
+<div id="myOutput">...</div>
+//
+<div id="myDiv02" style="background:lightblue;width:90; height:60;"
+onmouseover="{
+document.getElementById('myOutput02').innerHTML = ' you moused over '
+}">mouse over this div</div>
+
+<div id="myOutput02">...</div>
+//
+<div id="myDiv03" style="background:green;width:90; height:60;"
+onmouseout="{
+document.getElementById('myOutput03').innerHTML = ' you moused out '
+}">mouse out from this div</div>
+
+<div id="myOutput03">...</div>
+//
+<input type=text value"Change me" onChange="{
+	document.getElementById('myOutput04').innerHTML = 'you changed the text to: ' + this.value
+}">
+
+<div id="myOutput04">...</div>
+//
+
