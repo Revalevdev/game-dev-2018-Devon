@@ -30,7 +30,62 @@ Store these Items in a Javascript object <br>
 
 <div id='myDiv128'>...</div><br>
 
-<textarea id="myTextAreaObject" rows="8" cols="70" wrap="false">{
+<textarea id="myTextAreaObject2" rows="8" cols="70" wrap="false">{
+   "firstParty": "Rocking",
+   "lastParty": "in the hou",
+   "se": "tonight",
+   "everyBody": "just have a epic time"
+}
+</textarea><br> 
+    
+
+
+<input id="myButton2" type="button" value="Store as an object" onclick="{
+      
+    var myPerson = {}                                                              
+    myPerson = JSON.parse(document.getElementById('myTextAreaObject2').value)   
+                                                                         
+    document.getElementById('myDiv2').innerHTML = 'Party: ' + myPerson.firstParty + ' '+ myPerson.lastParty + ', se: '  + 
+          myPerson.se  + ', everyBody: ' + myPerson.everyBody + '<br>'
+                                                                                                                    
+}">
+
+
+
+
+<br><br>
+
+<div id='myDiv2'>...</div><br>
+
+<textarea id="myTextAreaObject3" rows="8" cols="70" wrap="false">{
+   "firstNumber": 1,
+   "lastNumber": 2,
+   "thirdNumber": 3,
+   "Fourth": 4
+}
+</textarea><br> 
+    
+
+
+<input id="myButton3" type="button" value="Store as an object" onclick="{
+      
+    var myPerson = {}                                                              
+    myPerson = JSON.parse(document.getElementById('myTextAreaObject3').value)   
+                                                                         
+    document.getElementById('myDiv3').innerHTML = '1: ' + myPerson.firstNumber + ' '+ myPerson.lastNumber + ', 2: '  + 
+          myPerson.thirdNumber  + ', 4: ' + myPerson.Fourth + '<br>'
+                                                                                                                    
+}">
+
+
+
+
+<br><br>
+
+<div id='myDiv3'>...</div><br>
+
+
+<textarea id="myTextAreaObject4" rows="8" cols="70" wrap="false">{
    "firstName": "John",
    "lastName": "Doe",
    "age": 50,
@@ -40,12 +95,12 @@ Store these Items in a Javascript object <br>
     
 
 
-<input id="myButton128" type="button" value="Store as an object" onclick="{
+<input id="myButton4" type="button" value="Store as an object" onclick="{
       
     var myPerson = {}                                                              
-    myPerson = JSON.parse(document.getElementById('myTextAreaObject').value)   
+    myPerson = JSON.parse(document.getElementById('myTextAreaObject4').value)   
                                                                          
-    document.getElementById('myDiv128').innerHTML = 'Name: ' + myPerson.firstName + ' '+ myPerson.lastName + ', Age: '  + 
+    document.getElementById('myDiv4').innerHTML = 'Name: ' + myPerson.firstName + ' '+ myPerson.lastName + ', Age: '  + 
           myPerson.age  + ', EyeColor: ' + myPerson.eyeColor + '<br>'
                                                                                                                     
 }">
@@ -55,4 +110,4 @@ Store these Items in a Javascript object <br>
 
 <br><br>
 
-<div id='myDiv128'>...</div><br>
+<div id='myDiv4'>...</div><br>
