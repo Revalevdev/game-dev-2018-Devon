@@ -5,7 +5,7 @@ background-size: 80%" background=
 
 
 <input type=button value="test" onclick="{
-alert(document.getElementById('myBody'))
+//alert(document.getElementById('myBody'))
 	document.getElementById('myBody').style.backgroundPosition = '100px 200px'
 }">
 
@@ -39,3 +39,21 @@ myGlobalX -= 5
 myTemp = '0px ' + myGlobalX + 'px' // to move down only
 document,getElementById('myBody').style.backgroundPosition =myTemp
 }">
+<button onclick="myFunxy()">Repeat</button>
+<script>
+function myFunxy() {
+ document.getElementById("myBody").style.backgroundRepeat = "repeat";
+}
+</script>
+<button onclick="myFun()">RepeatX</button>
+<script>
+function myFun() {
+ document.getElementById("myBody").style.backgroundRepeat = "repeat-x";
+}
+</script>
+<button onclick="myFuny()">RepeatY</button>
+<script>
+function myFuny() {
+ document.getElementById("myBody").style.backgroundRepeat = "repeat-y";
+}
+</script>
