@@ -1,0 +1,41 @@
+﻿t2a04-background-move
+<body id="myBody" style="background-repeat:no-repeat;
+background-size: 80%" background=
+"https://www.michelin.co.uk/content/img/winter-campaign/winter-campaign-detail-header-L2.jpg">
+
+
+<input type=button value="test" onclick="{
+alert(document.getElementById('myBody'))
+	document.getElementById('myBody').style.backgroundPosition = '100px 200px'
+}">
+
+<script>
+	let myGlobalX = 0
+</script>
+
+<input type=button value="background move right" onclick="{
+myTemp = '100px 0px'
+myGlobalX += 5
+myTemp = myGlobalX + 'px 0px'
+//myTemp = '0px ' + myGlobalX + 'px' // to move down only
+document,getElementById('myBody').style.backgroundPosition =myTemp
+}">
+<input type=button value="background move left" onclick="{
+myTemp = '100px 0px'
+myGlobalX -= 5
+myTemp = myGlobalX + 'px 0px'
+//myTemp = '0px ' + myGlobalX + 'px' // to move down only
+document,getElementById('myBody').style.backgroundPosition =myTemp
+}">
+<input type=button value="background move down" onclick="{
+myTemp = '100px 0px'
+myGlobalX += 5
+myTemp = '0px ' + myGlobalX + 'px' // to move down only
+document,getElementById('myBody').style.backgroundPosition =myTemp
+}">
+<input type=button value="background move up" onclick="{
+myTemp = '100px 0px'
+myGlobalX -= 5
+myTemp = '0px ' + myGlobalX + 'px' // to move down only
+document,getElementById('myBody').style.backgroundPosition =myTemp
+}">

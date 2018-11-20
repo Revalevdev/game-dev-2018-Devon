@@ -1,0 +1,30 @@
+﻿<h2 align=center>Javascript Classes Introduction by Devon</h2>
+
+
+<input type=text id="myNameInput" placeholder="Enter an animal name here" value="">
+
+<input id="myButton130" type="button" value="Make and Show the class myAnimal" onclick="{
+                                                                                 
+ class myAnimal {
+    constructor(passName, passAge, passColor) {
+       this.myName = passName;
+       this.myAge = passAge;
+       this.myColor = passColor;
+    }
+
+    myShow(){    
+       document.getElementById('myDiv130').innerHTML = 'Hello '+ this.myName + '. You are ' + this.myAge + ' years old.' + ' You have ' + this.myColor + ' fur<br>'
+    }
+
+ }  // end class myAnimal
+                                                             
+  
+                                                                                 
+   myDog = new myAnimal('Snickers', 5, 'brown')
+   myDog.myShow()      
+
+                                                 
+}"><br><br>
+
+<div id='myDiv130'>...</div><br>
+
