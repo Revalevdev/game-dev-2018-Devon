@@ -1,0 +1,27 @@
+﻿t2a05-auto-image-with-collision
+
+<body id="myBody" style="background-repeat:no-repeat;
+background-size: 80%" background=
+"https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&h=350">
+
+<script>
+	let myGlobalX = 0
+</script>
+
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        
+         var scrollSpeed = 80;
+         var current = 0;
+         var direction = 'h';
+         function bgscroll() {
+             current -= 1;
+             $('body').css("backgroundPosition", (direction == 'h') ? current + "px 0" : "0 " + current + "px");
+         }
+         setInterval("bgscroll()", scrollSpeed);
+    </script>
+    <style type="text/css">
+        body {
+            background-image: url('https://images.pexels.com/photos/235621/pexels-photo-235621.jpeg?auto=compress&cs=tinysrgb&h=350');
+        }
+    </style>

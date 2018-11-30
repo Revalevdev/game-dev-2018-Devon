@@ -1,0 +1,28 @@
+﻿finalproject
+
+<body id="myBody01" style="background-repeat:no-repeat;
+background-size: 100%" background=
+""
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+         var scrollSpeed = 50;
+         var current = 0;
+         var direction = 'h';
+         function bgscroll() {
+             current -= 1;
+             $('body').css("backgroundPosition", (direction == 'h') ? current + "px 0" : "0 " + current + "px");
+         }
+         setInterval("bgscroll()", scrollSpeed);
+    </script>
+    <style type="text/css">
+        body {
+            background-image: url('');
+        }
+    </style>
+
+<img id="mainimg" width=40 src=""
+style="position:absolute; width:40px; height:40px; left:600px; top:100px">
+
+<img id="badimage01" width=40 src=""
+style="position:absolute; width:40px; height:40px; left:100px; top:100px">
+
