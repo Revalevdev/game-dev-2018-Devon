@@ -60,19 +60,7 @@ document.getElementById('myArea01').value.toLowerCase().split('')
   document.getElementById('myArea02').value = 
 myString.join('')
 }">
-<input type=button value="Charcode" onclick="{
-  let myTemp = ''
-  myString =
-document.getElementById('myArea01').value.toLowerCase().split('')
-	for (let myLoop=0;	myLoop < myString.length; myLoop++){
-		mytemp = myString[myLoop]
-alert(myString.fromcharCodeAt(x))
-}
-	document.getElementById('myArea02').value =
-myString.join('')
-}">
-<br>
-<br>
+
 
 <textarea id="myArea02" rows 4 cols=30>
 Hi
@@ -123,3 +111,21 @@ myString.join('')
 <br>
 <br>
 <textarea id="myArea03" rows 4 cols=30></textarea>
+
+<input type=button value="ascii encrypt" onclick="{
+ let myString = document.getElementById('myArea01').value.toLowerCase()
+ let myTemp =''
+  for (let x=0; x < myString.length; x++){
+     myTemp += String.fromCharCode(myString.charCodeAt(x)+1) 
+   }
+   document.getElementById('myArea02').value = myTemp
+}"><br><br>
+ 
+<input type=button value="ascii decrypt" onclick="{
+ let myString = document.getElementById('myArea02').value.toLowerCase()
+ let myTemp =''
+  for (let x=0; x < myString.length; x++){
+     myTemp += String.fromCharCode(myString.charCodeAt(x)-1) 
+   }
+   document.getElementById('myArea03').value = myTemp
+}"><br><br>
