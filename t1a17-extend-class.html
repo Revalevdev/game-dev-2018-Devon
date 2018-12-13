@@ -1,26 +1,61 @@
-﻿
-<input id="myButton131" type="button" value="Extend a class" onclick="{
+﻿<input id="myButton131" type="button" value="Extend a class" onclick="{
 class myAnimal {
-    constructor(passName, passAge, passColor) {
+    constructor(passName, passAge) {
        this.myName = passName;
        this.myAge = passAge;
-       this.myColor = passColor;
     }
     myShow(){
-       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName + '. You are ' + this.myAge + ' years old + ' this.myColor + ' is his color<br>'
+       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName + '. You are ' + this.myAge + ' years old<br>'
     }
  }  // end class myAnimal
                                                              
 class myCat extends myAnimal {                                                                      
      myShow(){
-       document.getElementById('myDiv131').innerHTML = this.myName + ' is a great cat who is ' + this.myAge + ' years old + ' this.myColor + ' is his color<br>'
+       document.getElementById('myDiv131').innerHTML = this.myName + ' is a great cat who is ' + this.myAge + ' years old<br>'
     }                                                                   
 }    // end extended class myCat
-                                                                     
-                                                              
-                                                                                                                                                                                                       
-   myPet = new myCat('Fluffy', 14, 'White')
+                                                                                                                                                                                                                                                                 
+   myPet = new myCat('Fluffy', 14)
    myPet.myShow()                                                                           
 }"><br><br>
-
 <div id='myDiv131'>...</div><br>
+
+<input id="myButton1" type="button" value="Extend a class2" onclick="{
+class myMan {
+	constructor(passNameman, passAgeman) {
+		this.myNameman = passNameman;
+		this.myAgeman = passAgeman;
+	}
+	myMan2(){
+		document.getElementById('myDiv01').innerHTML = 'This is '+ this.myNameman + '. He is ' + this.myAgeman + ' years old<br>'
+	}
+}
+class myManex extends myMan {
+	myMan2(){
+		document.getElementById('myDiv01').innerHTML = this.myNameman + ' is a man that is ' + this.myAgeman + ' many years old<br>'
+	}
+}
+	myHuman = new myMan('John', 50)
+	myHuman.myMan2()
+}">
+<div id='myDiv01'>...</div><br>
+
+<input id="myButton2" type="button" value="Extend a class3" onclick="{
+class myClass {
+	constructor(passNameclass, passAgeclass) {
+		this.myNameclass = passNameclass;
+		this.myAgeclass = passAgeclass;
+	}
+	myClass2(){
+		document.getElementById('myDiv02').innerHTML = 'This is a '+ this.myNameclass + '. It is a ' + this.myAgeclass + '<br>'
+	}
+}
+class myClassex extends myClass {
+	myClass2(){
+		document.getElementById('myDiv02').innerHTML = this.myNameclass + ' is a man that is ' + this.myAgeclass + ' many years old<br>'
+	}
+}
+	myClasst = new myClass('Class', 'Classy Class')
+	myClasst.myClass2()
+}">
+<div id='myDiv02'>...</div><br>
