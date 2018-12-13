@@ -1,6 +1,5 @@
 ﻿<h2 align=center>Javascript Classes Introduction by Devon</h2>
 
-
 <input type=text id="myNameInput" placeholder="Enter an animal name here" value="">
 
 <input id="myButton130" type="button" value="Make and Show the class myAnimal" onclick="{
@@ -17,14 +16,42 @@
     }
 
  }  // end class myAnimal
-                                                             
-  
                                                                                  
    myDog = new myAnimal('Snickers', 5, 'brown')
    myDog.myShow()      
-
-                                                 
+                                               
 }"><br><br>
 
 <div id='myDiv130'>...</div><br>
+
+<input id="myButton1" type="button" value="class2" onclick="{
+class myMan {
+	constructor(passNameman, passAgeman) {
+		this.myNameman = passNameman;
+		this.myAgeman = passAgeman;
+	}
+	myMan2(){
+		document.getElementById('myDiv01').innerHTML = 'This is '+ this.myNameman + '. He is ' + this.myAgeman + ' years old<br>'
+	}
+}
+
+	myHuman = new myMan('John', 50)
+	myHuman.myMan2()
+}">
+<div id='myDiv01'>...</div><br>
+
+<input id="myButton2" type="button" value="class3" onclick="{
+class myClass {
+	constructor(passNameclass, passAgeclass) {
+		this.myNameclass = passNameclass;
+		this.myAgeclass = passAgeclass;
+	}
+	myClass2(){
+		document.getElementById('myDiv02').innerHTML = 'This is a '+ this.myNameclass + '. It is a ' + this.myAgeclass + '<br>'
+	}
+}
+	myClasst = new myClass('classssss', 'class')
+	myClasst.myClass2()
+}">
+<div id='myDiv02'>...</div><br>
 
