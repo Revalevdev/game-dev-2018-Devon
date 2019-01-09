@@ -1,2 +1,122 @@
-﻿<img id="myImage01 width=40 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/LACMTA_Square_Orange_Line.svg/1024px-LACMTA_Square_Orange_Line.svg.png"
-style="position:absolute; width:40px; height:40px; left:300px; top:100px">
+﻿
+<img id="myImage01 width=40 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/LACMTA_Square_Orange_Line.svg/1024px-LACMTA_Square_Orange_Line.svg.png"
+style="position:absolute; width:40px; height:40px; left:450px; top:100px">
+
+<img id="myImage02 width=40 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/LACMTA_Square_Orange_Line.svg/1024px-LACMTA_Square_Orange_Line.svg.png"
+style="position:absolute; width:500px; height:100px; left:220px; top:370px">
+
+<img id="myImage03 width=40 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/LACMTA_Square_Orange_Line.svg/1024px-LACMTA_Square_Orange_Line.svg.png"
+style="position:absolute; width:80px; height:80px; left:600px; top:380px">
+
+<input type=button id="attack_button" value="Attack_button" onclick="{
+myFunattack(enemy, attack)
+}">
+
+<button id="skill_button">DoTHING2</button>
+
+<button id="defend_button">DoTHING3</button>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#attack_button {
+    position:absolute;
+    transition: .5s ease;
+    top: 77%;
+    left: 24%;
+}
+#attack_button:hover { 
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+} 
+
+#skill_button {
+    position:absolute;
+    transition: .5s ease;
+    top: 83%;
+    left: 24%;
+}
+#skill_button:hover { 
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+} 
+
+#defend_button {
+    position:absolute;
+    transition: .5s ease;
+    top: 89%;
+    left: 24%;
+}
+#defend_button:hover { 
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+} 
+</style>
+</head>
+<body>
+<script>
+var hit_enemy = function(enemy, attack) {
+	if(enemy.state == "alive") {
+		enemy.health = enemy.health - attack.damage;
+		console.log("hit", enemy.health);
+	if(enemy.health <= 0) {
+		console.log("it died");
+		enemy.state = "dead";
+	}
+}
+	else {
+		console.log("it's already dead");
+	}
+}
+
+var player = {name: "Player", health: 40};
+var attack = {name: "Attack", damage: 5};
+var enemy1 = {name: "Enemy1", health: 1, state: "alive"};
+</script>
+
+
+<div style="background-color:red; position: absolute; top: 380px; left: 565px; width:25px; height: 80px;">
+
+</div>
+
+<div style="background-color:blue; position: absolute; top: 380px; left: 530px; width:25px; height: 80px;">
+
+</div>
+
+<script>
+function myFunattack(enemy, attack){
+var hit_enemy = function(enemy, attack) {
+	if(enemy.state == "alive") {
+		enemy.health = enemy.health - attack.damage;
+		console.log("hit", enemy.health);
+	if(enemy.health <= 0) {
+		console.log("it died");
+		enemy.state = "dead";
+	}
+}
+	else {
+		console.log("it's already dead");
+	}
+}
+
+</script>
+
+
+
+
+
+
+
+
