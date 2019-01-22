@@ -1,0 +1,129 @@
+﻿<h3 align=center > Scoring by Devon</h3>
+can't use buttons<br>
+Arrow keys are the controls for the one that scores<br>
+<input type=text id="myText01" value=0>
+
+
+
+<script>
+
+
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+myStart = new Date().getTime()
+
+document.onkeydown = checkKey;
+
+
+
+
+
+function checkKey(myEvent) {
+   let myEnd = new Date().getTime()
+   let myDuration = Math.round((myEnd-myStart)/1000)
+   document.getElementById('myDiv01').innerHTML = 'seconds: ' + myDuration +
+', keyCode: '+myEvent.keyCode
+   if (myDuration >= 60){
+	alert("Player 2 wins!")
+}
+   if (myHitOther('myImage01','myImage02')){
+       document.getElementById('myImage01').style ="position:absolute; width:40px; height:40px; left:200px; top:150px";
+} 
+
+   if (myHitOther('myImage01','myImage02')){
+       document.getElementById('myText01').value = parseInt(document.getElementById('myText01').value) + parseInt(100)
+} 
+
+if (myEvent.keyCode == 87){ document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top)-5 + 'px'}
+if (myEvent.keyCode == 65){ document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left)-5 + 'px'}
+if (myEvent.keyCode == 83){ document.getElementById('myImage01').style.top = parseInt(document.getElementById('myImage01').style.top)+5 + 'px'}
+if (myEvent.keyCode == 68){ document.getElementById('myImage01').style.left = parseInt(document.getElementById('myImage01').style.left)+5 + 'px'}
+if (myEvent.keyCode == 38){ document.getElementById('myImage02').style.top = parseInt(document.getElementById('myImage02').style.top)-5 + 'px'}
+if (myEvent.keyCode == 37){ document.getElementById('myImage02').style.left = parseInt(document.getElementById('myImage02').style.left)-5 + 'px'}
+if (myEvent.keyCode == 40){ document.getElementById('myImage02').style.top = parseInt(document.getElementById('myImage02').style.top)+5 + 'px'}
+if (myEvent.keyCode == 39){ document.getElementById('myImage02').style.left = parseInt(document.getElementById('myImage02').style.left)+5 + 'px'}
+}
+
+</script>
+
+
+
+
+
+
+<div id="myDiv01">...</div>
+
+<img id="myImage01" width=40 src="https://33.media.tumblr.com/17ffd65788d459e6591e5aade7a5b24d/tumblr_nwr7rtfzyt1ske259o1_500.gif"
+style="position:absolute; width:40px; height:40px; left:200px; top:200px">
+
+<img id="myImage02" width=40 src="http://dl.glitter-graphics.com/pub/3503/3503972igjuk96efr.gif"
+style="position:absolute; width:40px; height:40px; left:220px; top:100px">
+   
+
+<input type=button value="Up" onclick="{
+   console.log('up start')
+   document.getElementById('myDiv01').innerHTML = '...'
+   document.getElementById('myImage01').style.top = 
+     parseInt(document.getElementById('myImage01').style.top) - 5 + 'px'
+   if (myHitOther('myImage01','myImage02')){
+	document.getElementById('myImage01').style.top ='200px'
+	document.getElementById('myDiv01').innerHTML = 'Ouch'
+	
+   }
+   console.log('up end')
+}">
+
+<input type=button value="Right" onclick="{
+   console.log('right start')
+   document.getElementById('myDiv01').innerHTML = '...'
+   document.getElementById('myImage01').style.right = 
+     parseInt(document.getElementById('myImage01').style.right) + 5 - 'px'
+   if (myHitOther('myImage01','myImage02')){
+	document.getElementById('myImage01').style.right ='200px'
+	document.getElementById('myDiv01').innerHTML = 'Ouch'
+	document.getElementById('myScore').value = 200
+   }
+   console.log('right end')
+}">
+
+<input type=button value="Down" onclick="{
+   console.log('down start')
+   document.getElementById('myDiv01').innerHTML = '...'
+   document.getElementById('myImage01').style.down = 
+     parseInt(document.getElementById('myImage01').style.down) + 5 - 'px'
+   if (myHitOther('myImage01','myImage02')){
+	document.getElementById('myImage01').style.down ='200px'
+	document.getElementById('myDiv01').innerHTML = 'Ouch'
+	document.getElementById('myScore').value = 200
+   }
+   console.log('down end')
+}">
+
+<input type=button value="Left" onclick="{
+	console.log('left start')
+	document.getElementById('myDiv01').innerHTML = '...'
+	document.getElementById('myImage').style.left =
+	  parseInt(document.getElementById('myImage01').style.left) + 5 - 'px'
+	if (myHitOther('myImage01','myImage02')){
+		document.getElementById('myImage01').style.left ='200px'
+		document.getElementById('myDiv01').innerHTML = 'Ouch'
+		document.getElementById('myScore').value = 200
+	}
+	console.log('left end')
+}">
