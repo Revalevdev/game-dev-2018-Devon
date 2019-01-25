@@ -1,25 +1,25 @@
-﻿t1a07-arrays-devon<br>
+﻿<h2 align=center> 1D Arrays by devon</h2>
 
-<input type=text value=3 id="myText01">
+<input type=text value=7 id="myText01" >
 
 <input type=button value="1D Array" onclick="{
+   myProgramTerms = []  // creates an array
 
- myProgramTerms = [] // creates an array
+   myProgramTerms[0] = `variables`
+   myProgramTerms[1] = `decisions`
+   myProgramTerms[2] = `for loops`
+   myProgramTerms[3] = `arrays`
+   myProgramTerms[4] = `if statements`
+   myProgramTerms[5] = `functions`
+   myProgramTerms[6] = `strings`
+   myProgramTerms[7] = `classes`
+   document.getElementById('myDiv01').innerHTML =``
+   for (let myLoop=0;  myLoop < 8;  myLoop++ ){
+    document.getElementById('myDiv01').innerHTML += myLoop + `:`+
+        myProgramTerms[myLoop]+`<br>`
+   }
 
- myProgramTerms[0] = 'variables'
- myProgramTerms[1] = 'decisions
- myProgramTerms[2] = 'for loops
-
-for (let myLoop=0; myLoop < 3; myLoop++ ){
-	document.getElementById('myDiv01').innerHTML += myProgramTerms
-[myLoop]
-}
-
-
-
-	document.getElementById("myDiv01").innerHTML =  
-		myProgramTerms[0] + ' '+  myProgramTerms[1] + ' '+  myProgramTerms[2]
-			document.getElementById("myText01").value
 }">
+
 
 <div id="myDiv01">...</div>
