@@ -1,0 +1,171 @@
+﻿<img id="myImage01 width=60 src="https://dragon-quest.org/images/thumb/9/93/DQ_Slime.png/250px-DQ_Slime.png"
+style="position:absolute; width:60px; height:60px; left:575px; top:300px">
+
+<button id="attack" onClick="fight(id)">Attack</button>
+		<button id="counter" onClick="fight(id)">Counter</button>
+		<div id="yourHealth"><div id="yourHealthBar"></div></div>
+		<div id="compHealth"><div id="compHealthBar"></div></div>
+		<div id="announcements"></div>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+	box-sizing: border-box;
+}
+html {
+	width: 100%
+}
+body {
+	
+}
+button {
+	background: #eee;
+	padding: 10px 25px;
+	margin-bottom: 15px;
+	display: block;
+}
+#yourHealth, #compHealth {
+	position: relative;
+	height: 30px;
+	width: 250px;
+	border: white 3px solid;
+	border-radius: 3px;
+	margin-right: 20px;
+	display: inline-block;
+}
+#yourHealthBar, #compHealthBar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: lightgreen;
+}
+#announcements {
+	border: black 2px solid
+}
+#announcements span {
+	color: white;
+}
+</style>
+</head>
+<body>
+
+
+
+<script>
+// each player chooses a move
+// defense goes first (player then comp)
+// attacks go second (player then comp)
+// health gets minused as attacks land
+//Global variables >>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var yourMove;
+var compMove;
+var savedCompMove;
+var yourHealth = 100;
+var compHealth = 100;
+//Turn counters >>>>>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var totRounds = 0;
+//Doument rewrites >>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+var res;
+var playByPlay = document.getElementById('announcements');
+var yourHealthBar = document.getElementById('yourHealthBar');
+var compHealthBar = document.getElementById('compHealthBar');
+var attackButton = document.getElementById('attack');
+var counterButton = document.getElementById('counter');
+var playAgain = document.getElementById('playAgain');
+//Run on load >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function enableButtons() {
+	attackButton.disabled = false;
+	counterButton.disabled = false;
+}
+// triggers the fight in the HTML
+function fight(id) {
+	addRound();
+	compMove(id);
+	healthChange();
+	gameOver();
+}
+
+
+function addRound() {
+	totRounds += 1;
+}
+
+
+function counter(y, c) {
+	var move = Math.floor((Math.random()*5));
+	if (move >= 3 && y === 'attack') {
+		res = 'Computers counter was successful! You took 10 damage';
+		yourHealth -= 10;
+	} else if (move >= 3 && y === 'counter') {
+		res = 'Your counter was successful! Comp took 10 damage';
+		compHealth -= 10;
+	} else if (move < 3 && y === 'attack') {
+		res = 'Computer counter failed! You dealt 15 damage!';
+		compHealth -= 15;
+	} else if (move < 3 && y === 'counter') {
+		res = 'Your counter was not successful! You were dealt 15 damage!';
+		yourHealth -= 15;
+	}
+}
+
+function roundResults(res) {
+	playByPlay.innerHTML += res + "<br>";
+}
+function healthChange() {
+	yourHealthBar.style.width = yourHealth + "%";
+	compHealthBar.style.width =  compHealth + "%";
+}
+function gameOver() {
+	if (yourHealth === 0 || compHealth === 0) {
+		res = 'gameOver!';
+		roundResults(res);
+		attackButton.disabled = true;
+		counterButton.disabled = true;
+		playAgain.disabled = true;
+	}
+}
+
+function compMove(id) {
+	var move = Math.floor((Math.random()*4)+1);
+	if (move <= 3) {
+		savedCompMove =  'attack';
+	} else {
+		savedCompMove = 'counter';
+	};
+	res = ('your move is <span>'+ id + '</span> and the computers move is <span>' + savedCompMove + '</span> on round ' + totRounds);
+	damageStep(id, savedCompMove);
+	roundResults(res);
+}
+
+function damageStep(y, c) {
+	if ( y === 'attack' && c === 'attack') {
+		res = 'Both players took damage';
+		if (compHealth >= 10 && yourHealth >= 10) {
+			compHealth -= 10;
+			yourHealth -= 10;
+		} else {
+			compHealth = 0;
+			yourHealth = 0;
+		}
+	} else if ( y === 'counter' && c === 'counter') {
+		res = 'Defensive stances taken in vain';
+	} else if ( y === 'attack' && c === 'counter') {
+		res = 'Comp took a defensive stance and prepares to counter';
+		counter(y, c);
+	} else if ( y === 'counter' && c === 'attack') {
+		res = 'You took a defensive stance and prepare to counter';
+		counter(y, c);
+	}
+}
+window.onload=enableButtons();
+</script>
+
+
