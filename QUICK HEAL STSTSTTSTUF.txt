@@ -1,0 +1,6 @@
+
+var healFun
+function healFunction(id) {
+	if (healFun == true) {
+		res = 'You healed yourself for 20 points!'
+		yourHealth += 20; //Remember to put in <script>
